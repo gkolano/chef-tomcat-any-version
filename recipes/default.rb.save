@@ -1,0 +1,19 @@
+#
+# Cookbook Name:: tomcat-any-ver
+# Recipe:: default
+#
+# Copyright 2013, YOUR_COMPANY_NAME
+#
+# All rights reserved - Do Not Redistribute
+#
+
+version = node['tomcat-any-ver']['version']
+base_version = version.split('.')[0]
+
+remote_file "/tmp/apache-tomcat-#{version}.tar.gz" do
+  source "http://archive.apache.org/dist/tomcat/tomcat-#{base_version}/v#{version}/bin/apache-tomcat-#{version}.tar.gz"
+end
+
+
+
+wget http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.47/bin/apache-tomcat-7.0.47.tar.gz
